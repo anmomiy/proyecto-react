@@ -1,5 +1,5 @@
 
-.appBar {
+.App > .nav-bar {
     background-color: #F2AEB4;
     color: black;
 }

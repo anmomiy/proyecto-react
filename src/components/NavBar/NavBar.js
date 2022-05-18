@@ -9,8 +9,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './NavBar.css';
-
 const pages = ['Nosotros', 'Productos', 'Contacto'];
 
 
@@ -27,7 +27,7 @@ const NavBar = () => {
 
 
   return (
-    <AppBar position="static" class="appBar">
+    <AppBar position="static" className="nav-bar">
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
           
@@ -115,7 +115,7 @@ const NavBar = () => {
             ))}
           </Box>
 
-         
+          <ShoppingCartIcon/>
         </Toolbar>
       </Container>
     </AppBar>

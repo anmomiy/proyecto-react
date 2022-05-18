@@ -1,14 +1,16 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
+import CardList from './components/CardList/CardList'
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <h1>Proyecto de React</h1>
-      <img src="https://placekitten.com/800/600"></img>
+      <CardList title={"Productos Recomendados"} />
+      <CardList title={"Alimento para Mascotas"} />
     </div>
   );
 }
 
 export default App;
+
