@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css';
 const pages = ['Nosotros', 'Productos', 'Contacto'];
 
@@ -115,7 +115,7 @@ const NavBar = () => {
             ))}
           </Box>
 
-          <ShoppingCartIcon/>
+          <CartWidget/>
         </Toolbar>
       </Container>
     </AppBar>
