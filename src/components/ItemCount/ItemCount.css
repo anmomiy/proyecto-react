@@ -1,0 +1,17 @@
+.countBox{
+    margin: 2% 0;
+    display:flex;
+    justify-content: center;
+}
+.countBox > span{
+    width: 50px;
+    height: 36.5px;
+    line-height: 36.5px;
+    border: 1px solid #6fa6a6;
+    border-radius: 4px;
+}
+.countBox > button{
+    background-color: #6FA6A6;
+    margin: 0% 2%;
+    width: 50px;
+}

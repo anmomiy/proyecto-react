@@ -1,9 +1,10 @@
 import * as React from 'react';
 import {Card, CardContent} from '@mui/material';
 import Button from '@mui/material/Button';
-import './CardItem.css'
+import './Item.css'
+import ItemCount from '../ItemCount/ItemCount'
+const Item = ({itemName,image,price,description,itemStock}) =>{
 
-const CardItem = ({itemName,image,price,description}) =>{
     return(
         <Card >
             <CardContent >
@@ -12,11 +13,11 @@ const CardItem = ({itemName,image,price,description}) =>{
                 <h3>{itemName}</h3>
                 <p>S/ {price}</p>
                 <p>{description}</p>
-                <Button variant="outlined">Comprar</Button>
+                <ItemCount stock={itemStock}/>
                 </div>
             </CardContent>
         </Card>
     )
 }
 
-export default CardItem;
+export default Item;

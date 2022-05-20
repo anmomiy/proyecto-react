@@ -1,13 +1,13 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
-import CardList from './components/CardList/CardList'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <CardList title={"Productos Recomendados"} />
-      <CardList title={"Alimento para Mascotas"} />
+      <ItemListContainer />
+
     </div>
   );
 }
