@@ -1,9 +1,8 @@
 import * as React from 'react';
-import {Card, CardContent} from '@mui/material';
-import Button from '@mui/material/Button';
+import {Card, CardContent, Button} from '@mui/material';
 import './Item.css'
-import ItemCount from '../ItemCount/ItemCount'
-const Item = ({itemName,image,price,description,itemStock}) =>{
+import {Link} from 'react-router-dom'
+const Item = ({itemName,image,price,description,id}) =>{
 
     return(
         <Card >
@@ -13,7 +12,9 @@ const Item = ({itemName,image,price,description,itemStock}) =>{
                 <h3>{itemName}</h3>
                 <p>S/ {price}</p>
                 <p>{description}</p>
-                <ItemCount stock={itemStock}/>
+                <Button>
+                    <Link to={`/productos/${id}`}>Detalles</Link>
+                </Button>
                 </div>
             </CardContent>
         </Card>

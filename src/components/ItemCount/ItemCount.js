@@ -15,14 +15,14 @@ const ItemCount = ({stock}) =>{
         console.log(count)
     }
     return(
-        <>
+        <div className="toCartButton">
         <div className='countBox'>
-            <Button onClick={removeCount} variant="contained">-</Button>
+            <Button onClick={removeCount}>-</Button>
             <span>{count}</span>
-            <Button onClick={addCount} variant="contained">+</Button>
+            <Button onClick={addCount} >+</Button>
         </div>
-        <Button onClick={onAdd} variant="contained">Comprar</Button>
-        </>
+        <Button onClick={onAdd} variant="contained">Agregar al Carrito</Button>
+        </div>
     )
 }
 

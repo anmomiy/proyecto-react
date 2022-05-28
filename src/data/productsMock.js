@@ -1,4 +1,4 @@
-const alimentos = [
+const productos = [
     {
         id: 1,
         itemName: "Alimento para Gatitos",
@@ -33,4 +33,4 @@ const alimentos = [
     },
 ]
 
-export {alimentos}
+export default productos;

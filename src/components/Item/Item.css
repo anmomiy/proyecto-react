@@ -4,3 +4,7 @@
 .card-content > button{
     background-color: #6FA6A6;
 }
+.card-content > button > a{
+    text-decoration: none;
+    color:white;
+}
