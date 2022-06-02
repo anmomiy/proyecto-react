@@ -9,7 +9,7 @@ Es una página web creada con React JS para el curso de coderhouse. El negocio e
 
 ### Gif Navegabilidad 
 Link al gif de la entrega intermedia: 
-![entrega-int](entrega-intermedia.gif)
+![entrega-int](/public/entrega-intermedia.gif)
 
 
 
