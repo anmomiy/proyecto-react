@@ -8,7 +8,8 @@ Es una página web creada con React JS para el curso de coderhouse. El negocio e
 - Swiper: Para el carrusel 
 
 ### Gif Navegabilidad 
-Link al gif de la entrega intermedia url("http://localhost:3000/entrega-intermedia.gif")
+Link al gif de la entrega intermedia: 
+![](entrega-intermedia.gif)
 
 # Getting Started with Create React App
 
