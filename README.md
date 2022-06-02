@@ -5,7 +5,8 @@ Es una página web creada con React JS para el curso de coderhouse. El negocio e
 ### Dependencias usadas
 
 - Material UI: Para darle estilo a los componentes de la página
-- Swiper: Para el carrusel 
+- Swiper: Carrusel 
+- react-router-dom: Rutas de navegación
 
 ### Gif Navegabilidad 
 Link al gif de la entrega intermedia: 
