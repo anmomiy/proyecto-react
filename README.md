@@ -9,7 +9,27 @@ Es una página web creada con React JS para el curso de coderhouse. El negocio e
 
 ### Gif Navegabilidad 
 Link al gif de la entrega intermedia: 
-![](entrega-intermedia.gif)
+![entrega-int](entrega-intermedia.gif)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Getting Started with Create React App
 
