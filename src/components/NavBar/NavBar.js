@@ -10,12 +10,14 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import CartWidget from '../CartWidget/CartWidget'
+import {Link} from 'react-router-dom';
+import {useState} from 'react'
 import './NavBar.css';
-const pages = ['Nosotros', 'Productos', 'Contacto'];
+const categories = ['Perros', 'Gatos'];
 
 
 const NavBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -24,30 +26,23 @@ const NavBar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
 
   return (
     <AppBar position="static" className="nav-bar">
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
           
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Huellitas
-          </Typography>
+          <h1>
+            <Link className="main-link link-nav" to={`/`} ><img src="/logo.png"/></Link>
+          </h1>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -78,41 +73,73 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem  
+                onClick={handleCloseNavMenu}
+                >
+                  <Link className="link-nav" to={`/`}>Inicio</Link>
                 </MenuItem>
-              ))}
+                <MenuItem  
+                onClick={handleCloseNavMenu}
+                >
+                  <Link className="link-nav" to={`/aboutus`}>Nosotros</Link>
+                </MenuItem>
+                <MenuItem  
+                onClick={handleClick}
+                >
+                  Productos
+                </MenuItem>
+                
+                <MenuItem  
+                onClick={handleCloseNavMenu}
+                >
+                  <Link className="link-nav" to={`/contact`}>Contacto</Link>
+                </MenuItem>
+        
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Huellitas
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
+          
+            <Link class="nav-title" to={'/'}><img src="./logo.png"/></Link>
+          <Box className="navegacion" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                {page}
+                <Link className="link-nav" to={`/`}>Inicio</Link>
+
               </Button>
-            ))}
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'black', display: 'block' }}
+              >
+                <Link className="link-nav" to={`/aboutus`}>Nosotros</Link>
+
+              </Button>
+              <Button
+                    sx={{ my: 2, color: 'black', display: 'block' }}
+                    onClick={handleClick}
+                    
+                >
+                    Productos
+                </Button>
+                <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                    }}
+                >
+                    {categories.map( (cat) => {
+                        return <MenuItem key={cat} onClick={handleClose}><Link className="link-nav" to={`/category/${cat}`}>{cat}</Link></MenuItem>
+                    })}
+                </Menu>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'black', display: 'block' }}
+              >
+                <Link className="link-nav" to={`/contact`}>Contacto</Link>
+              </Button>
           </Box>
 
           <CartWidget/>

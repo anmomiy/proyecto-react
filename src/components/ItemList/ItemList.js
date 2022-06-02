@@ -8,6 +8,7 @@ const ItemList = ({title, products}) =>{
         <div className="cardList-container">
             <h2>{title}</h2>
             <Grid container spacing={2}>
+                
                 {
                     products.map(e =>{
                         return(

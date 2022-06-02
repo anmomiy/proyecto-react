@@ -8,12 +8,12 @@ const Item = ({itemName,image,price,description,id}) =>{
         <Card >
             <CardContent >
                 <div className="card-content">
-                <img src={`./${image}`} />
+                <img src={`/${image}`} />
                 <h3>{itemName}</h3>
                 <p>S/ {price}</p>
                 <p>{description}</p>
                 <Button>
-                    <Link to={`/productos/${id}`}>Detalles</Link>
+                    <Link to={`/product/${id}`}>Detalles</Link>
                 </Button>
                 </div>
             </CardContent>

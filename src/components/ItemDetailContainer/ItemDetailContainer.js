@@ -11,9 +11,7 @@ const ItemDetailContainer = () =>{
     
   const getItem = () =>{
     return new Promise (resolve =>{
-        setTimeout(()=>{
-            resolve(productos)
-        },2000)
+      resolve(productos)
     })
 }
 

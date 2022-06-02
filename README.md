@@ -1,3 +1,15 @@
+## Huellitas
+
+Es una página web creada con React JS para el curso de coderhouse. El negocio es ficticio
+
+### Dependencias usadas
+
+- Material UI: Para darle estilo a los componentes de la página
+- Swiper: Para el carrusel 
+
+### Gif Navegabilidad 
+Link al gif de la entrega intermedia url("http://localhost:3000/entrega-intermedia.gif")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

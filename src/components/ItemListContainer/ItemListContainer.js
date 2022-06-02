@@ -1,14 +1,12 @@
 
-import ItemList from '../ItemList/ItemList'
+import ItemListSwiper from '../ItemListSwiper/ItemListSwiper'
 import {useState, useEffect} from 'react'
 import productos from '../../data/productsMock'
 const ItemListContainer = ()=>{
 const [products,setProducts] = useState([])
 const getProducts = () =>{
     return new Promise (resolve =>{
-        setTimeout(()=>{
-            resolve(productos)
-        },1000)
+        resolve(productos)
     })
 }
 useEffect(()=>{
@@ -19,7 +17,7 @@ useEffect(()=>{
 }, [])
     return(
         <>
-        <ItemList title={"Alimento para Mascotas"} products={products} />
+        <ItemListSwiper title={"Productos"} products={products} />
         </>
     )
 }
