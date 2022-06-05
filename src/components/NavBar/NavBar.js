@@ -98,7 +98,7 @@ const NavBar = () => {
             </Menu>
           </Box>
           
-            <Link class="nav-title" to={'/'}><img src="./logo.png"/></Link>
+            <Link className="nav-title" to={'/'}><img src="/logo.png"/></Link>
           <Box className="navegacion" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           <Button
                 onClick={handleCloseNavMenu}

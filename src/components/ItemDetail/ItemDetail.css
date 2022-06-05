@@ -20,6 +20,14 @@
     margin:auto;
     line-height: 50px;
 }
+.itemDetail .toCartButton{
+    background-color: #6fa6a6;
+
+}
+.toCartButton > a{
+    color:white;
+    text-decoration: none;
+}
 @media screen and (max-width:768px) {
     .item-detail-container img{
         width: 100%;
