@@ -1,16 +1,19 @@
 import * as React from 'react';
 import ItemCount from '../ItemCount/ItemCount'
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom'
 import './ItemDetail.css'
+import CartContext from '../../context/CartContext'
 const ItemDetail = ({itemData}) =>{
     const [quantity, setQuantity] = useState(0)
     const [showButton,setShowButton] = useState(false)
+    const { addItemToCart } = useContext(CartContext)
     const addProductToCart = () =>{
-        console.log(itemData)
-        console.log(quantity)
+        itemData.quantity = quantity
+        addItemToCart(itemData)
         setShowButton(true)
+
     }
     return(
     <div className ="item-detail-container">

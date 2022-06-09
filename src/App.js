@@ -8,23 +8,24 @@ import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Cart from './pages/Cart'
+import {CartProvider} from './context/CartContext';
 function App() {
   return (
     <div className="App">
-      
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/aboutus' element={<AboutUs/> } />
-          <Route path='/cart' element={<Cart/> } />
-          <Route path='/contact' element={<Contact/> } />
-          <Route path='/product/:id' element={<Details/> } />
-          <Route path='/category/:category' element={<Products/> } />
-          <Route path='*' element={<NotFound/>} />
-        </Routes>
-      
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/aboutus' element={<AboutUs/> } />
+            <Route path='/cart' element={<Cart/> } />
+            <Route path='/contact' element={<Contact/> } />
+            <Route path='/product/:id' element={<Details/> } />
+            <Route path='/category/:category' element={<Products/> } />
+            <Route path='*' element={<NotFound/>} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
