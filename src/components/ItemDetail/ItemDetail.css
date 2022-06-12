@@ -24,10 +24,15 @@
     background-color: #6fa6a6;
 
 }
+.itemDetail .toCartButton:hover{
+    background-color: #B4D9D5;
+
+}
 .toCartButton > a{
     color:white;
     text-decoration: none;
 }
+
 @media screen and (max-width:768px) {
     .item-detail-container img{
         width: 100%;

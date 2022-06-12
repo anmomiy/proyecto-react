@@ -20,13 +20,22 @@ const CartWidget = () =>{
     };
     return(
         <div>
-            <ShoppingCartIcon 
+            <div>
+            <div 
+            className="cartCount"
+            onClick={handleClick}
+            >
+                <ShoppingCartIcon 
+                className="cartIcon"
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-            />
+                fontSize="large"
+                
+                />
+            <p>{cartListItems.length}</p>
+            </div>
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
@@ -42,7 +51,7 @@ const CartWidget = () =>{
                         <div className="emptyCart">
                             <h2>Carrito de Compras</h2>
                             <p>No hay productos agregados</p>
-                            <Link to="/category/Perros" >Ir a comprar</Link>
+                            <Link to="/" >Ir a comprar</Link>
                         </div>
                     )
                     :
@@ -64,13 +73,14 @@ const CartWidget = () =>{
                                 </div>
                                 )
                             })}
-                            <Link to="/cart">Ir a pagar</Link>
+                            <Link to="/cart">Ver Carrito</Link>
                         </div>
                     )}
                     
 
                 </div>
             </Menu>
+            </div>
         </div>
     )
 }

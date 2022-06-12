@@ -20,7 +20,7 @@ const CartProvider = ({children}) =>{
     return(
 
         <RemoveCartContext.Provider value={useCallback(id =>{
-            const newArray = itemsRef.current.filter(item => item.id != id);
+            const newArray = itemsRef.current.filter(item => item.id !== id);
             setCartListItems(newArray)
         },[])}>
             <CartContext.Provider value={data}>

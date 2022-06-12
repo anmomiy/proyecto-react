@@ -11,7 +11,6 @@ const Item = ({itemName,image,price,description,id}) =>{
                 <img src={`/${image}`} />
                 <h3>{itemName}</h3>
                 <p>S/ {price}</p>
-                <p>{description}</p>
                 <Button>
                     <Link to={`/product/${id}`}>Detalles</Link>
                 </Button>

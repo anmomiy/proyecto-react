@@ -7,7 +7,7 @@ const ItemCount = ({stock, refreshQuantity, quantity}) =>{
         quantity < stock && refreshQuantity(quantity + 1)
     }
     const removeCount = () =>{
-        quantity > 0 && refreshQuantity(quantity - 1)
+        quantity > 1 && refreshQuantity(quantity - 1)
     }
 
     return(

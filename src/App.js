@@ -1,4 +1,3 @@
-import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home.js';
@@ -9,6 +8,7 @@ import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Cart from './pages/Cart'
 import {CartProvider} from './context/CartContext';
+import './App.css';
 function App() {
   return (
     <div className="App">

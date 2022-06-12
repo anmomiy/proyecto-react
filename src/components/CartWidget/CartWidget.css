@@ -32,6 +32,7 @@
 .cartItem div{
     line-height: 25px;
     margin-right: 20px;
+    width: 180px;
 }
 .cartItem h3, h4{
     margin:0;
@@ -44,4 +45,26 @@
     color: #f2a0a0;
     font-size: 14px;
     font-weight: 500;
+}
+
+.cartIcon{
+    color: #F2A0A0 ;
+    position:relative;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #B4D9D5;
+}
+.cartCount p{
+    position:absolute;
+    top: 28%;
+    right: 1%;
+    font-weight: 700;
+    font-size: 15px;
+    color:rgb(69, 69, 69);
+}
+@media (max-width: 900px){
+    .cartCount p {
+        top: 16%;
+        right: 2.7%;
+    }
 }
