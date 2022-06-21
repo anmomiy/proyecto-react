@@ -12,9 +12,7 @@ const getProducts = async () =>{
         product.id = doc.id
         return product
     })
-    return new Promise (resolve =>{
-            resolve(productList)
-    })
+    return productList
 }
 useEffect(()=>{
     getProducts()

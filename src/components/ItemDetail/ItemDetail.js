@@ -8,7 +8,7 @@ import CartContext from '../../context/CartContext'
 const ItemDetail = ({itemData}) =>{
     const [quantity, setQuantity] = useState(1)
     const [showButton,setShowButton] = useState(false)
-    const { addItemToCart } = useContext(CartContext)
+    const { addItemToCart, getTotalPrice } = useContext(CartContext)
     const navigate = useNavigate();
     const goBack = () =>{
         navigate(-1)
@@ -35,7 +35,7 @@ const ItemDetail = ({itemData}) =>{
                     </div>
                 :
                     <div>
-                    <Button className="toCartButton" variant="contained"><Link to="/cart">Terminar mi Compra</Link></Button>
+                    <Button className="toCartButton" variant="contained" onClick={getTotalPrice}><Link to="/cart">Terminar mi Compra</Link></Button>
                     <Button className="toCartButton" variant="contained" onClick={goBack}>Volver</Button>
                     </div>
                 }

@@ -34,16 +34,54 @@
 .cart-item-info > .toPay{
     background-color: #6fa6a6;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 5px;
 
 }
 .cart-item-info > .toPay:hover{
     background-color: #B4D9D5;
-    padding: 10px;
-    border-radius: 25px;
-
 }
 .toPay a{
     color: white;
     text-decoration: none; 
+}
+.cajaModal{
+    background-color: white;
+    width: 250px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cajaModal > h3{
+    text-align: center;
+    font-size: 22px;
+}
+.cajaModal > form{
+    text-align: center;
+}
+.cajaModal button{
+    background-color:#6fa6a6;
+}
+.cajaModal button:hover{
+    background-color: #B4D9D5;
+}
+.cajaModal div {
+    margin-bottom: 10px; 
+
+}
+.finishModal{
+    text-align: center;
+    line-height: 1.5;
+}
+.finishModal p{
+    font-size: 18px;
+}
+.finishModal h3{
+    font-size: 22px;
+}
+.finishModal span{
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
 }

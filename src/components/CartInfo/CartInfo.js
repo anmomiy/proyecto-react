@@ -3,11 +3,70 @@ import CartContext from '../../context/CartContext'
 import { RemoveCartContext } from '../../context/CartContext';
 import {useContext, useState} from 'react'
 import Button from '@mui/material/Button';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
+import {addDoc, collection} from 'firebase/firestore'
+import db from '../../data/ItemCollection'
 import './CartInfo.css'
 const CartInfo = () =>{
-    const {cartListItems} = useContext(CartContext)
+    const {cartListItems, totalPrice, cleanCartItems} = useContext(CartContext)
     const removeItem = useContext(RemoveCartContext)
+    const navigate = useNavigate();
+    const [finish, setFinish] = useState(false);
+    const [orderId, setOrderId] = useState('')
+    const [open, setOpen] = useState(false);
+    const [formValue, setFormValue] = useState({
+        name: '',
+        phone: '',
+        email: ''
+    })
+    const [order, setOrder] = useState({
+        buyer: {},
+        items: [],
+        date: '',
+        total: ''
+    })
+    const handleOpen = () => {
+        setOpen(true);
+    }
+    const handleClose = () => {
+        setOpen(false);
+    }
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        setOrder({...order, buyer: formValue, items: cartListItems.map((item)=>{
+            return{
+                id: item.id,
+                title: item.itemName,
+                price: item.price,
+                quantity: item.quantity
+            }
+        }), date: new Date().toLocaleDateString('es-MX'), total: totalPrice})
+        saveData({...order, buyer: formValue, items: cartListItems.map((item)=>{
+            return{
+                id: item.id,
+                title: item.itemName,
+                price: item.price,
+                quantity: item.quantity
+            }
+        }), date: new Date().toLocaleDateString('es-MX'), total: totalPrice})
+        setFinish(true)
+    }
+    const confirmPurchase = () =>{
+        cleanCartItems()
+        navigate('/')
+    }
+    const handleChange = (e) =>{
+        setFormValue({...formValue, [e.target.name]: e.target.value})
+        
+    }
+    const saveData = async (newOrder) =>{
+        const orderFirebase = collection(db, 'ordenes')
+        const orderDoc = await addDoc(orderFirebase, newOrder)
+        setOrderId(orderDoc.id)
+    }
+    
     return(
         <div className="cart-info">
             <h1>Carrito de Compras</h1>
@@ -42,19 +101,65 @@ const CartInfo = () =>{
                         <h3>{item.price}</h3>
                         <h3>{item.quantity}</h3>
                         <h3>S/{total(item.quantity,item.price).toFixed(2)}</h3>
-                        <h3><DeleteIcon onClick={() => removeItem(item.id)}/></h3>
+                        <h3><DeleteIcon onClick={() => {removeItem(item.id)} }/></h3>
                     </div>
                     
                     </>
                     )
                 })}
-                    <p>Monto a Pagar: S/{
-                        cartListItems
-                        .map((e) => e.quantity * e.price )
-                        .reduce((acc,cur)=>{
-                            return acc + cur;
-                        }, 0).toFixed(2)}</p>       
-                <Button className="toPay" variant="contained"><Link  to="/cart">Ir a pagar</Link></Button>
+                    <p>Monto a Pagar: S/{totalPrice.toFixed(2)}</p>       
+                <Button className="toPay" variant="contained" onClick={handleOpen}>Completar compra</Button>
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <div className="cajaModal">
+                        {!finish ?
+                        (<div> 
+                        <h3>Ingresa tus datos para completar tu compra</h3>
+                        <form onSubmit={handleSubmit}>
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Nombre y Apellido"
+                                name="name"
+                                value={formValue.name}
+                                onChange={handleChange}
+                                
+                            />
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Email"
+                                name="email"
+                                value={formValue.email}
+                                onChange={handleChange}
+                            />
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Teléfono"
+                                name="phone"
+                                value={formValue.phone}
+                                onChange={handleChange}
+                            />
+                            <Button type="submit" variant="contained" >Completar compra</Button>
+                        </form>
+                        </div>)
+                        :
+                        (<div className="finishModal">
+                            <h3>Gracias por su compra</h3>
+                            <p>El código de su orden es: </p>
+                            <span>{orderId}</span>
+                            <p>Por favor, asegúrese de guardar su código</p>
+                            <Button variant="contained" onClick={confirmPurchase}>Volver al inicio</Button>
+                        </div>)
+                    }
+                        
+                    </div>
+                </Modal>
             </div>
         )}
         </div>

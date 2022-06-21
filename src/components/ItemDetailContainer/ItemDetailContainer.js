@@ -16,9 +16,8 @@ const ItemDetailContainer = () =>{
         product.id = doc.id
         return product
     })
-    return new Promise (resolve =>{
-            resolve(productList)
-    })
+    return productList
+    
 }
   useEffect(()=>{
     getItem()

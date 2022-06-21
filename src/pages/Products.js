@@ -15,9 +15,8 @@ const Products = () =>{
                 return product
             })
             
-            return new Promise (resolve =>{
-                    resolve(productList)
-            })
+            return productList
+ 
         }
         const filterByCategory = (array) => {
             return array.map( (e) => {
