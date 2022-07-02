@@ -12,7 +12,8 @@ const getProducts = async () =>{
         product.id = doc.id
         return product
     })
-    return productList
+    const filteredProductList = productList.filter(e => e.price > 100)
+    return filteredProductList
 }
 useEffect(()=>{
     getProducts()
@@ -22,7 +23,7 @@ useEffect(()=>{
 }, [])
     return(
         <>
-        <ItemListSwiper title={"Productos"} products={products} />
+        <ItemListSwiper title={"Productos Recomendados"} products={products} />
         </>
     )
 }

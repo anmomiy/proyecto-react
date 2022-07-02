@@ -15,7 +15,7 @@ const ItemListSwiper = ({title, products}) =>{
             <Grid container spacing={2}>
             <Swiper
                 slidesPerView={1}
-                spaceBetween={10}
+                spaceBetween={30}
                 pagination={{
                     clickable: true,
                 }}
@@ -29,7 +29,11 @@ const ItemListSwiper = ({title, products}) =>{
                     },
                     900: {
                         slidesPerView: 3,
-                        spaceBetween: 30,
+                        spaceBetween: 20,
+                      },
+                    1400: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
                       }
                 }}
             >

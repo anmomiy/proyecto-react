@@ -2,14 +2,12 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Menu from '@mui/material/Menu';
 import CartContext from '../../context/CartContext'
-import { RemoveCartContext } from '../../context/CartContext';
 import {useContext, useState} from 'react'
 import {Link} from 'react-router-dom'
 import './CartWidget.css'
 const CartWidget = () =>{
-    const {cartListItems} = useContext(CartContext)
+    const {cartListItems, deleteItem} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
-    const removeItem = useContext(RemoveCartContext)
     const open = Boolean(anchorEl);
     
     const handleClick = (event) => {
@@ -63,13 +61,13 @@ const CartWidget = () =>{
                                 }
                                 return(
                                 <div key={`cart-${item.id}`} className="cartItem">    
-                                    <img src={`/${item.image}`}/>
+                                    <img alt={`${item.image}`} src={`/${item.image}`}/>
                                     <div>
                                         <h3>{item.itemName}</h3>
                                         <h4>Cantidad: {item.quantity} und.</h4>
                                         <h4>Total: S/{total(item.quantity,item.price).toFixed(2)}</h4>
                                     </div>
-                                    <DeleteIcon onClick={() => removeItem(item.id)}/>
+                                    <DeleteIcon onClick={() => deleteItem(item)}/>
                                 </div>
                                 )
                             })}

@@ -1,5 +1,6 @@
 .card-content > img{
     width: 100%;
+    height: 284.05px;
 }
 .card-content > button{
     background-color: #6FA6A6;
@@ -7,4 +8,10 @@
 .card-content > button > a{
     text-decoration: none;
     color:white;
+}
+.card-content{
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

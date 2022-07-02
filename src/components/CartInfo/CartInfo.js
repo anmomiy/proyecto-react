@@ -1,6 +1,5 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import CartContext from '../../context/CartContext'
-import { RemoveCartContext } from '../../context/CartContext';
 import {useContext, useState} from 'react'
 import Button from '@mui/material/Button';
 import {Link, useNavigate} from 'react-router-dom'
@@ -10,8 +9,7 @@ import {addDoc, collection} from 'firebase/firestore'
 import db from '../../data/ItemCollection'
 import './CartInfo.css'
 const CartInfo = () =>{
-    const {cartListItems, totalPrice, cleanCartItems} = useContext(CartContext)
-    const removeItem = useContext(RemoveCartContext)
+    const {cartListItems, totalPrice, cleanCartItems, deleteItem} = useContext(CartContext)
     const navigate = useNavigate();
     const [finish, setFinish] = useState(false);
     const [orderId, setOrderId] = useState('')
@@ -95,13 +93,13 @@ const CartInfo = () =>{
                     }
                     return(
                     <>
-                    <div key={`cartInfo-${item.id}`} className="cart-item-detail">    
-                        <h3><img src={`/${item.image}`}/></h3>
+                    <div key={`cartInfo-${item.itemName}`} className="cart-item-detail">    
+                        <h3><img alt={`${item.image}`} src={`/${item.image}`}/></h3>
                         <h3>{item.itemName}</h3>
                         <h3>{item.price}</h3>
                         <h3>{item.quantity}</h3>
                         <h3>S/{total(item.quantity,item.price).toFixed(2)}</h3>
-                        <h3><DeleteIcon onClick={() => {removeItem(item.id)} }/></h3>
+                        <h3><DeleteIcon onClick={() => {deleteItem(item)} }/></h3>
                     </div>
                     
                     </>
