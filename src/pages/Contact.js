@@ -28,13 +28,13 @@ const Contact = () =>{
         console.log(contactDoc)
     }
     return(
-        <div>
+        <div className="contact">
             <div className='contact-sns'>
                 <h2>¡Estas son nuestras redes sociales!</h2>
                 <div>
-                <a href="www.instagram.com"><img alt="insta" src="./logo-instagram.png"/> Instagram</a>
-                <a href="www.facebook.com"><img alt="facebook" src="./facebook-icono.png"/> Facebook</a>
-                <a href="www.whatsapp.com"><img alt="whatsapp" src="./whatsapp-icono.png"/> Whatsapp</a>
+                <a href="http://www.instagram.com" target="_blank"><img alt="insta" src="./logo-instagram.png"/> Instagram</a>
+                <a href="http://www.facebook.com" target="_blank"><img alt="facebook" src="./facebook-icono.png"/> Facebook</a>
+                <a href="http://www.whatsapp.com" target="_blank"><img alt="whatsapp" src="./whatsapp-icono.png"/> Whatsapp</a>
                 </div>
             </div>
             <div>

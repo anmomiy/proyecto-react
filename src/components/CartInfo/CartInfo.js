@@ -73,12 +73,13 @@ const CartInfo = () =>{
     }
     
     return(
+        <div className="cart-container">
         <div className="cart-info">
             <h1>Carrito de Compras</h1>
             <div className="cart-titles">
-                <h2>Imagen</h2>
+                <h2 className="hide-size">Imagen</h2>
                 <h2>Producto</h2>
-                <h2>Precio</h2>
+                <h2 className="hide-size">Precio</h2>
                 <h2>Cantidad</h2>
                 <h2>Total</h2>
                 <h2>Eliminar</h2>
@@ -101,9 +102,9 @@ const CartInfo = () =>{
                     return(
                     <>
                     <div key={`cartInfo-${item.itemName}`} className="cart-item-detail">    
-                        <h3><img alt={`${item.image}`} src={`/${item.image}`}/></h3>
+                        <h3 className="hide-size"><img alt={`${item.image}`} src={`/${item.image}`}/></h3>
                         <h3>{item.itemName}</h3>
-                        <h3>{item.price}</h3>
+                        <h3 className="hide-size">{item.price}</h3>
                         <h3>{item.quantity}</h3>
                         <h3>S/{total(item.quantity,item.price).toFixed(2)}</h3>
                         <h3><DeleteIcon onClick={() => {deleteItem(item)} }/></h3>
@@ -175,6 +176,7 @@ const CartInfo = () =>{
                 </Modal>
             </div>
         )}
+        </div>
         </div>
     )
 }

@@ -82,3 +82,6 @@ body{
 .banner{
   width: 100%;
 }
+.contact{
+  min-height: 60vh;
+}

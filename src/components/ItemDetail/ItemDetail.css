@@ -13,6 +13,7 @@
     width: 50%;
     margin:auto;
     min-width: 450px;
+    height: 600px
 }
 .item-detail-container > div{
     text-align: center;
