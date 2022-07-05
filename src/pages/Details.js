@@ -1,3 +1,4 @@
+//Components
 import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer"
 
 const Details = () =>{

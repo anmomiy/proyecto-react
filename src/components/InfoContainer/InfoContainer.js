@@ -1,3 +1,4 @@
+//CSS
 import "./InfoContainer.css"
 const InfoContainer = ({title, content, image}) =>{
     return(

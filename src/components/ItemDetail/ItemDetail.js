@@ -1,10 +1,15 @@
+//React
 import * as React from 'react';
-import ItemCount from '../ItemCount/ItemCount'
 import {useState, useContext} from 'react';
-import Button from '@mui/material/Button';
 import {Link, useNavigate} from 'react-router-dom'
-import './ItemDetail.css'
+//Material UI
+import Button from '@mui/material/Button';
+//Components
+import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../../context/CartContext'
+//CSS
+import './ItemDetail.css'
+
 const ItemDetail = ({itemData}) =>{
     const [quantity, setQuantity] = useState(1)
     const [showButton,setShowButton] = useState(false)

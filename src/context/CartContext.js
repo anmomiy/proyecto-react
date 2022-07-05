@@ -1,8 +1,9 @@
-import {createContext, useState, useCallback, useRef} from 'react';
+//React
+import {createContext, useState, useRef} from 'react';
+//Sweet Alert 2
 import Swal from 'sweetalert2'
-
+//Context
 const CartContext = createContext()
-export const RemoveCartContext = createContext()
 
 const CartProvider = ({children}) =>{
     const [cartListItems, setCartListItems] = useState(JSON.parse(localStorage.getItem('productos')) || [] )

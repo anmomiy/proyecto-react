@@ -1,9 +1,12 @@
+//React
 import * as React from 'react';
-import {Card, CardContent, Button} from '@mui/material';
-import './Item.css'
 import {Link} from 'react-router-dom'
-const Item = ({itemName,image,price,description,id}) =>{
+//Material UI
+import {Card, CardContent, Button} from '@mui/material';
+//CSS
+import './Item.css'
 
+const Item = ({itemName,image,price,id}) =>{
     return(
         <Card >
             <CardContent >

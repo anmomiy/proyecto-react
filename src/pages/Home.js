@@ -1,3 +1,4 @@
+//Components
 import InfoContainer from '../components/InfoContainer/InfoContainer';
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
 

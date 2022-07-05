@@ -1,6 +1,8 @@
-
+//Material UI
 import {Grid} from '@mui/material'
+//Components
 import CardItem from '../Item/Item'
+//CSS
 import './ItemList.css'
 const ItemList = ({title, products}) =>{
 

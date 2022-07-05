@@ -1,13 +1,19 @@
+//Material UI
 import DeleteIcon from '@mui/icons-material/Delete';
-import CartContext from '../../context/CartContext'
-import {useContext, useState} from 'react'
 import Button from '@mui/material/Button';
-import {Link, useNavigate} from 'react-router-dom'
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
+//React
+import {useContext, useState} from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+//Firebase
 import {addDoc, collection} from 'firebase/firestore'
 import db from '../../data/ItemCollection'
+//Components
+import CartContext from '../../context/CartContext'
+//CSS
 import './CartInfo.css'
+
 const CartInfo = () =>{
     const {cartListItems, totalPrice, cleanCartItems, deleteItem} = useContext(CartContext)
     const navigate = useNavigate();
@@ -104,7 +110,7 @@ const CartInfo = () =>{
                     <div key={`cartInfo-${item.itemName}`} className="cart-item-detail">    
                         <h3 className="hide-size"><img alt={`${item.image}`} src={`/${item.image}`}/></h3>
                         <h3>{item.itemName}</h3>
-                        <h3 className="hide-size">{item.price}</h3>
+                        <h3 className="hide-size">S/{item.price.toFixed(2)}</h3>
                         <h3>{item.quantity}</h3>
                         <h3>S/{total(item.quantity,item.price).toFixed(2)}</h3>
                         <h3><DeleteIcon onClick={() => {deleteItem(item)} }/></h3>

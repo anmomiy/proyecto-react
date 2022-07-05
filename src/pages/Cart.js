@@ -1,3 +1,4 @@
+//Components
 import CartInfo from '../components/CartInfo/CartInfo'
 const Cart = () =>{
     return(

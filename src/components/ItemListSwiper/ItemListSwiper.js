@@ -1,11 +1,14 @@
-
+//Material UI
 import {Grid} from '@mui/material'
+//Components
 import CardItem from '../Item/Item'
+//Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper"
 import "swiper/css";
 import "swiper/css/pagination"
 import "swiper/css/navigation";
+//CSS
 import './ItemListSwiper.css'
 const ItemListSwiper = ({title, products}) =>{
 

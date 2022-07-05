@@ -1,9 +1,13 @@
+//Material UI
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Menu from '@mui/material/Menu';
-import CartContext from '../../context/CartContext'
+//React
 import {useContext, useState} from 'react'
 import {Link} from 'react-router-dom'
+//Components
+import CartContext from '../../context/CartContext'
+//CSS
 import './CartWidget.css'
 const CartWidget = () =>{
     const {cartListItems, deleteItem} = useContext(CartContext)

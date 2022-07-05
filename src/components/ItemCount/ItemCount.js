@@ -1,5 +1,8 @@
+//Material UI
 import Button from '@mui/material/Button';
+//React
 import {useState} from 'react';
+//CSS
 import './ItemCount.css'
 const ItemCount = ({stock, refreshQuantity, quantity}) =>{
 

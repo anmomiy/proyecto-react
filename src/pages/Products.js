@@ -1,7 +1,11 @@
+    //Components
     import ItemList from '../components/ItemList/ItemList'
+    //Material UI
     import { Button } from '@mui/material'
+    //React
     import {useState, useEffect} from 'react'
     import {useParams} from 'react-router-dom'
+    //Firebase
     import {collection, getDocs} from 'firebase/firestore'
     import db from '../data/ItemCollection'
 

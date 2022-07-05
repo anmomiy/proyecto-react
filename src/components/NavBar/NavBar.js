@@ -1,4 +1,8 @@
+//React
 import * as React from 'react';
+import {Link} from 'react-router-dom';
+import {useState} from 'react'
+//Material UI
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,9 +12,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+//Components
 import CartWidget from '../CartWidget/CartWidget'
-import {Link} from 'react-router-dom';
-import {useState} from 'react'
+//CSS
 import './NavBar.css';
 const categories = ['Perros', 'Gatos'];
 

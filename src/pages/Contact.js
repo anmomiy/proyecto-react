@@ -1,9 +1,13 @@
+//Firebase
 import {addDoc, collection} from 'firebase/firestore'
 import db from '../data/ItemCollection'
+//React
 import {useState} from 'react'
 import { Link } from 'react-router-dom';
+//Material UI
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+
 const Contact = () =>{
     const [flag, setFlag] = useState(true)
     const [formValue, setFormValue] = useState({
@@ -24,8 +28,7 @@ const Contact = () =>{
     }
     const saveData = async (newContact) =>{
         const contactFirebase = collection(db, 'contacto')
-        const contactDoc = await addDoc(contactFirebase, newContact)
-        console.log(contactDoc)
+        await addDoc(contactFirebase, newContact)
     }
     return(
         <div className="contact">

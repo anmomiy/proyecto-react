@@ -1,6 +1,10 @@
+//React
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
+//Components
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
+import {CartProvider} from './context/CartContext';
+//Pages
 import Home from './pages/Home.js';
 import NotFound from './pages/NotFound.js'
 import Details from './pages/Details.js'
@@ -8,7 +12,7 @@ import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Cart from './pages/Cart'
-import {CartProvider} from './context/CartContext';
+//CSS
 import './App.css';
 function App() {
   return (
