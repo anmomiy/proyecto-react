@@ -15,8 +15,6 @@ Link al gif de la entrega final:
 ![entrega-fin](/public/entrega-final.gif)
 
 
-Link al gif de la entrega intermedia: 
-![entrega-int](/public/entrega-intermedia.gif)
 
 
 
