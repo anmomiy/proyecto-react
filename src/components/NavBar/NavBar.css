@@ -6,6 +6,12 @@
 
 .link-nav, .nav-title{
     color:black;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Raleway'
+}
+.navegacion > button{
+    font-weight: bold;
     text-decoration: none;
     font-family: 'Raleway'
 }

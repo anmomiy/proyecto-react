@@ -1,5 +1,6 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home.js';
 import NotFound from './pages/NotFound.js'
 import Details from './pages/Details.js'
@@ -24,6 +25,7 @@ function App() {
             <Route path='/category/:category' element={<Products/> } />
             <Route path='*' element={<NotFound/>} />
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </CartProvider>
     </div>
