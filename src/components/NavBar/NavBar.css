@@ -13,7 +13,8 @@
 .navegacion > button{
     font-weight: bold;
     text-decoration: none;
-    font-family: 'Raleway'
+    font-family: 'Raleway';
+
 }
 .nav-title{
     display:flex;

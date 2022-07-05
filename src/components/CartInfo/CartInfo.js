@@ -17,7 +17,8 @@ const CartInfo = () =>{
     const [formValue, setFormValue] = useState({
         name: '',
         phone: '',
-        email: ''
+        email: '',
+        email2: ''
     })
     const [order, setOrder] = useState({
         buyer: {},
@@ -33,23 +34,29 @@ const CartInfo = () =>{
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        setOrder({...order, buyer: formValue, items: cartListItems.map((item)=>{
-            return{
-                id: item.id,
-                title: item.itemName,
-                price: item.price,
-                quantity: item.quantity
-            }
-        }), date: new Date().toLocaleDateString('es-MX'), total: totalPrice})
-        saveData({...order, buyer: formValue, items: cartListItems.map((item)=>{
-            return{
-                id: item.id,
-                title: item.itemName,
-                price: item.price,
-                quantity: item.quantity
-            }
-        }), date: new Date().toLocaleDateString('es-MX'), total: totalPrice})
-        setFinish(true)
+        if (formValue.email === formValue.email2){
+            setOrder({...order, buyer: formValue, items: cartListItems.map((item)=>{
+                return{
+                    id: item.id,
+                    title: item.itemName,
+                    price: item.price,
+                    quantity: item.quantity
+                }
+            }), date: new Date().toLocaleDateString('es-MX'), total: totalPrice})
+            saveData({...order, buyer: formValue, items: cartListItems.map((item)=>{
+                return{
+                    id: item.id,
+                    title: item.itemName,
+                    price: item.price,
+                    quantity: item.quantity
+                }
+            }), date: new Date().toLocaleDateString('es-MX'), total: totalPrice})
+            setFinish(true)
+        }
+        else{
+            alert("Ambos correos deben ser iguales.")
+        }
+        
     }
     const confirmPurchase = () =>{
         cleanCartItems()
@@ -133,6 +140,14 @@ const CartInfo = () =>{
                                 label="Email"
                                 name="email"
                                 value={formValue.email}
+                                onChange={handleChange}
+                            />
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Confirmar Email"
+                                name="email2"
+                                value={formValue.email2}
                                 onChange={handleChange}
                             />
                             <TextField

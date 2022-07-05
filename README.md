@@ -9,6 +9,7 @@ Se puede visualizar el detalle de cada producto y agregarlo al carrito.
 - Swiper: Carrusel 
 - react-router-dom: Rutas de navegación
 - Firebase: Base de datos para los productos y para almacenar las órdenes. También almacena los datos ingresados en el formulario de contacto. 
+- SweetAlert2: Alertas
 
 ### Gif Navegabilidad 
 Link al gif de la entrega final: 

@@ -1,5 +1,5 @@
 import {createContext, useState, useCallback, useRef} from 'react';
-
+import Swal from 'sweetalert2'
 
 const CartContext = createContext()
 export const RemoveCartContext = createContext()
@@ -17,7 +17,14 @@ const CartProvider = ({children}) =>{
             
             
         }
-        
+        else{
+            Swal.fire({
+                title: 'Error!',
+                text: 'Este producto ya se encuentra en tu carrito',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+        }
     }
     const deleteItem = (item) =>{
         const newArray = cartListItems.filter( (e) => e.id !== item.id )

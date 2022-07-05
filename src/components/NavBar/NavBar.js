@@ -99,20 +99,20 @@ const NavBar = () => {
           
             <Link className="nav-title" to={'/'}><img src="/logo.png"/></Link>
           <Box className="navegacion" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <Button
+          <Link className="link-nav" to={`/`}><Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                <Link className="link-nav" to={`/`}>Inicio</Link>
+                Inicio
 
-              </Button>
-              <Button
+              </Button></Link>
+              <Link className="link-nav" to={`/aboutus`}><Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                <Link className="link-nav" to={`/aboutus`}>Nosotros</Link>
+                Nosotros
 
-              </Button>
+              </Button></Link>
               <Button
                     sx={{ my: 2, color: 'black', display: 'block' }}
                     onClick={handleClick}
@@ -133,12 +133,12 @@ const NavBar = () => {
                         return <MenuItem key={cat} onClick={handleClose}><Link className="link-nav" to={`/category/${cat}`}>{cat}</Link></MenuItem>
                     })}
                 </Menu>
-              <Button
+              <Link className="link-nav" to={`/contact`}><Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                <Link className="link-nav" to={`/contact`}>Contacto</Link>
-              </Button>
+                Contacto
+              </Button></Link>
           </Box>
 
           <CartWidget/>
